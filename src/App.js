@@ -1,18 +1,17 @@
- 
+import Header from './components/Header'
 
 function App(){
-    const title = "Blog Post"
-    const body = "This is my blog post"
     
-
     return (
         <>
-         <h1>{title.toUpperCase()}</h1>
-         <p>{body}</p>
-         {Math.random() * (5+5)}
+        <Header  />
+        <div className="container">
+
+            <h1>My App</h1>
+            
+        </div>
 
         </>
-    
     )
 }
 
