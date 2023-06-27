@@ -1,4 +1,6 @@
 import { useState } from "react";
+import Card from "../shared/Card";
+import propTypes from 'prop-types'
 
 function FeedbackItem({id, item}) {
 
@@ -7,21 +9,22 @@ function FeedbackItem({id, item}) {
         item.text
      );
 
-     const handleClick = () => {
-        setRating((prev) => {
-             return (prev+1)
-        });
-     }
+     
 
   return (
-    <div className="card">
+    <Card >
 
         <div className="num-display">{rating}</div>
         <div className="text-display">{feedback}</div>
-        <button onClick={handleClick}>Click Here</button>
+        
       
-    </div>
+    </Card>
   )
+}
+
+FeedbackItem.propTypes = {
+    id: propTypes.number,
+    item: propTypes.object,
 }
 
 export default FeedbackItem
