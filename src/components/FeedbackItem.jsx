@@ -1,21 +1,21 @@
+import {FaTimes} from 'react-icons/fa'
 import { useState } from "react";
 import Card from "../shared/Card";
 import propTypes from 'prop-types'
 
-function FeedbackItem({id, item}) {
+function FeedbackItem({item, handleDelete}) {
 
-     const [rating, setRating] = useState(item.rating);
-     const [feedback, setFeedback] = useState(
-        item.text
-     );
-
+    
      
 
   return (
     <Card >
 
-        <div className="num-display">{rating}</div>
-        <div className="text-display">{feedback}</div>
+        <div className="num-display">{item.rating}</div>
+        <button onClick= {() => handleDelete(item.id)} className='close'>
+            <FaTimes color='purple'/>
+        </button>
+        <div className="text-display">{item.text}</div>
         
       
     </Card>

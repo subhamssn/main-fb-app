@@ -1,13 +1,13 @@
 const feedbackData = [
     {
         id: 1,
-        rating: 10,
+        rating: 8,
         text: 'This is the First Feedback Item of Global state'
         
     }, 
     {
         id: 2,
-        rating: 10,
+        rating: 9,
         text: 'This is the Second Feedback Item of Global state'
         
     }, 

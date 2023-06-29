@@ -1,12 +1,13 @@
 import FeedbackItem from "./FeedbackItem"
 import propTypes from 'prop-types'
 
-function FeedbackList({feedback}) {
+function FeedbackList({feedback, handleDelete}) {
   return (
     <>
     <div className="feedback-list">
       {feedback.map((item) => (
-       <FeedbackItem id = {item.id} item = {item}/>
+       <FeedbackItem id = {item.id} item = {item}
+       handleDelete={handleDelete}/>
       )) }
     </div>
     </>
