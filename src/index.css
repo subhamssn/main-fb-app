@@ -23,6 +23,12 @@ ul {
   padding: 0 20px;
 }
 
+.active{
+  background-color: black;
+  color: red;
+  margin-left: 1rem;
+}
+
 header {
   height: 70px;
   width: 100%;
