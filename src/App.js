@@ -8,7 +8,7 @@ import FeedbackStats from './components/FeedbackStats';
 import FeedbackForm from './components/FeedbackForm';
 import AboutPage from './pages/AboutPage'
 import AboutIconLink from './components/AboutIconLink';
-import Card from './shared/Card';
+import { FeedbackProvider } from './context/FeedbackContext';
 
 function App(){
 
@@ -34,6 +34,10 @@ function App(){
     
     
     return (
+    
+    <FeedbackProvider>
+
+    
         <Router>
         <Header  />
         <div className="container">
@@ -60,20 +64,13 @@ function App(){
            <Route path='/about' element={<AboutPage />}/>
            </Routes>
 
-           <Card>
-            <NavLink to='/' activeClassName='active'>
-                Home
-            </NavLink>
-
-            <NavLink to='/about' activeClassName='active'>
-                About
-            </NavLink>
-           </Card>
-
+          
            
         </div>
 
         </Router>
+
+    </FeedbackProvider>
     )
 }
 
