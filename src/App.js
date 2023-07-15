@@ -1,4 +1,4 @@
-import {v4 as uuidv4} from 'uuid'
+
 import { BrowserRouter as Router, Route, Routes, NavLink} from 'react-router-dom';
 import Header from './components/Header'
 import { useState } from 'react';
@@ -15,20 +15,6 @@ function App(){
     const [feedback, setFeedback] = useState(
         feedbackData
     )
-
-    const addFeedback = (newFeedback) => {
-        newFeedback.id = uuidv4();
-        setFeedback([newFeedback,...feedback])
-        
-    }
-
-    const deleteFeedback = (id) => {
-
-        if(window.confirm('Are you sure you want to Delete?')){
-            setFeedback( feedback.filter((item) => item.id!==id
-            ))
-        }
-    }
 
     
     
@@ -48,12 +34,10 @@ function App(){
             <Route exact path='/' element={
                 <>
                 
-               <FeedbackForm handleAdd = {addFeedback}/>
+               <FeedbackForm />
                <FeedbackStats feedback={feedback}/>
 
-               <FeedbackList 
-                  feedback={feedback} handleDelete = {deleteFeedback}
-               />
+               <FeedbackList />
                <AboutIconLink />
                </> 
             }>
